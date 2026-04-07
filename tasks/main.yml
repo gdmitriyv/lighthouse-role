@@ -1,5 +1,4 @@
-# tasks file for lightHouse-role
----
+# tasks file for lighthouse-role
 - name: Install, configure, and start Lighthouse
   block:
   - name: Pre-install Nginx & Git client
@@ -18,7 +17,7 @@
   - name: Prepare nginx config
     become: true
     ansible.builtin.template:
-      src: "templates/nginx/lighthouse.conf.j2"
+      src: "templates/lighthouse.conf.j2"
       dest: "/etc/nginx/conf.d/{{ lighthouse_nginx_conf }}"
       mode: "0644"
       owner: root
